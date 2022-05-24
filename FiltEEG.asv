@@ -1,0 +1,11 @@
+function [output] = FiltEEG(LFP, order,samplerate)
+
+ny=sample_rate/2;
+cutoff=cutoff/ny
+
+sampleRate = 1000; 
+cutOff = 10; 
+[b, a] = butter(order, cutOff/(sampleRate/2)); 
+output = filtfilt(b, a, LFP); 
+
+end
